@@ -18,8 +18,11 @@ Development of a simple chat program using threaded TCP echo server and client
 
 ### About the Program
 
-This program uses the Transmission Control Protocol, as the underlying protocol to connect servers and clients. I will be developing two python files, one for the server, and another for the clients. The goal is to be able to successfully create threaded connections, which creates threads for every connection between a client and a server for managing multiple connections simultaneously. When one client sends a bundle of TCP packet containing a message, the server should send it to all other clients. Both program files will be developed in the VM which runs mininet. 
+This program uses the Transmission Control Protocol, as the underlying protocol to connect servers and clients. I will be developing two python files, one for the server, and another for the clients. The goal is to be able to successfully create threaded connections, which creates threads for every connection between a client and a server for managing multiple connections simultaneously. When one client sends a bundle of TCP packet containing a message, the server should send it to all other clients. Both program files will be developed in the VM which runs the mininet. 
 
 
 ### Implementation Decisions
 
+#### Threaded-Server.py
+
+Threads are used to distinct and manage connections from different clients. When the server is booted up, it should wait for connection requests from clients. Whenever a client requests connection, the server establishes a new thread for the connection. 
